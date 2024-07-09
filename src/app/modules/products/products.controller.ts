@@ -32,7 +32,7 @@ const getSingleProduct = handleAsync(async (req, res) => {
   responseSender(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: "Product is created Successfully",
+    message: "Product is retrieved Successfully",
     data: result,
   });
 });
@@ -45,7 +45,7 @@ const updateProduct = handleAsync(async (req, res) => {
   responseSender(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: "Product is created Successfully",
+    message: "Product is updated Successfully",
     data: result,
   });
 });
@@ -57,7 +57,7 @@ const deleteProduct = handleAsync(async (req, res) => {
   responseSender(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: "Product is created Successfully",
+    message: "Product is deleted Successfully",
     data: result,
   });
 });

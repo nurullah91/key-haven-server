@@ -14,7 +14,6 @@ const createProductValidationSchema = z.object({
     .nonnegative({ message: "Product quality must be a non-negative integer" }),
   price: z
     .number()
-    .int()
     .nonnegative({ message: "Product price must be a non-negative integer" }),
 });
 
