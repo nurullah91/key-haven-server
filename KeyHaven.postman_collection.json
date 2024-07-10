@@ -1,0 +1,367 @@
+{
+	"info": {
+		"_postman_id": "c0489a0a-a4d4-4510-8805-1de42d98541e",
+		"name": "KeyHaven",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27394234"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"image\": \"https://example.com/images/corsair-k95.jpg\",\r\n    \"title\": \"Corsair K95 RGB Platinum\",\r\n    \"brand\": \"Corsair\",\r\n    \"availableQuantity\": 10,\r\n    \"price\": 199.99,\r\n    \"description\": \"The Corsair K95 RGB Platinum is a top-tier mechanical keyboard featuring customizable RGB lighting and durable key switches.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{keyhaven-local-url}}/products/create-product",
+							"host": [
+								"{{keyhaven-local-url}}"
+							],
+							"path": [
+								"products",
+								"create-product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{keyhaven-local-url}}/products",
+							"host": [
+								"{{keyhaven-local-url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{keyhaven-local-url}}/products/668db54f3898033e829be761",
+							"host": [
+								"{{keyhaven-local-url}}"
+							],
+							"path": [
+								"products",
+								"668db54f3898033e829be761"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update products",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"price\": 80\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{keyhaven-local-url}}/products/668db54f3898033e829be761",
+							"host": [
+								"{{keyhaven-local-url}}"
+							],
+							"path": [
+								"products",
+								"668db54f3898033e829be761"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{keyhaven-local-url}}/products/668db54f3898033e829be761",
+							"host": [
+								"{{keyhaven-local-url}}"
+							],
+							"path": [
+								"products",
+								"668db54f3898033e829be761"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "create order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"name\": \"John Doe\",\r\n    \"phone\": \"1234567890\",\r\n    \"email\": \"johndoe@example.com\",\r\n    \"deliveryAddress\": \"123 Main Street, Springfield, USA\",\r\n    \"totalPrice\": 299.99,\r\n    \"orderStatus\": \"paid\",\r\n    \"orderInfo\": [\r\n      {\r\n        \"product\": \"668db54f3898033e829be761\",\r\n        \"price\": 4,\r\n        \"quantity\": 2\r\n      },\r\n      {\r\n        \"product\": \"668db54f3898033e829be761\",\r\n        \"price\": 7,\r\n        \"quantity\": 1\r\n      }\r\n    ]\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{keyhaven-local-url}}/orders/create-order",
+							"host": [
+								"{{keyhaven-local-url}}"
+							],
+							"path": [
+								"orders",
+								"create-order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{keyhaven-local-url}}/orders",
+							"host": [
+								"{{keyhaven-local-url}}"
+							],
+							"path": [
+								"orders"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "john@example.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{keyhaven-local-url}}/orders/668dd6ecddf7c6542cf0efaa",
+							"host": [
+								"{{keyhaven-local-url}}"
+							],
+							"path": [
+								"orders",
+								"668dd6ecddf7c6542cf0efaa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a order",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{keyhaven-local-url}}/orders/668dd6ecddf7c6542cf0efaa",
+							"host": [
+								"{{keyhaven-local-url}}"
+							],
+							"path": [
+								"orders",
+								"668dd6ecddf7c6542cf0efaa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update a order",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderStatus\": \"delivered\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{keyhaven-local-url}}/orders/668dd6ecddf7c6542cf0efaa",
+							"host": [
+								"{{keyhaven-local-url}}"
+							],
+							"path": [
+								"orders",
+								"668dd6ecddf7c6542cf0efaa"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Review",
+			"item": [
+				{
+					"name": "Create a review",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"johndoe@example2.com\",\r\n  \"location\": \"New York\",\r\n  \"review\": \"This keyboard is amazing! It's very responsive and comfortable to type on.\",\r\n  \"image\": \"https://example.com/profile-image.jpg\",\r\n  \"rating\": 4.5\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{keyhaven-local-url}}/reviews/create-review",
+							"host": [
+								"{{keyhaven-local-url}}"
+							],
+							"path": [
+								"reviews",
+								"create-review"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All review",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{keyhaven-local-url}}/reviews",
+							"host": [
+								"{{keyhaven-local-url}}"
+							],
+							"path": [
+								"reviews"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "johndoe@example2.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Review",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{keyhaven-local-url}}/reviews/668de6ec25d108274117f5c4",
+							"host": [
+								"{{keyhaven-local-url}}"
+							],
+							"path": [
+								"reviews",
+								"668de6ec25d108274117f5c4"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "johndoe@example2.com",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update a review",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"review\": \"This keyboard is amazing! It's very responsive and comfortable to type on. Kewboard ta valo ace\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{keyhaven-local-url}}/reviews/668de6ec25d108274117f5c4",
+							"host": [
+								"{{keyhaven-local-url}}"
+							],
+							"path": [
+								"reviews",
+								"668de6ec25d108274117f5c4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a review",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{keyhaven-local-url}}/reviews/668de6ec25d108274117f5c4",
+							"host": [
+								"{{keyhaven-local-url}}"
+							],
+							"path": [
+								"reviews",
+								"668de6ec25d108274117f5c4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
