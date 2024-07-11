@@ -2,13 +2,12 @@
 
 This is a mechanical keyboard e-commerce website server. In this website you can browse products and add product to cart and view cart also you can get the carts product by clicking the cart icon in the navbar. And you can add update or delete a product in dashboard. You can place order from your cart items. In About us page you will get information about the Key Haven. You can also visit contact us page for details contact information.
 
-> ### _API end points_
+> ## _API end points_
 >
 > ### Products
 >
 > _Create product_
 > -POST: api/v1/products/create-product
-
 > _Update Product_
 >
 > - PUT:api/v1/products/:id
@@ -22,7 +21,6 @@ This is a mechanical keyboard e-commerce website server. In this website you can
 >
 > _Create Orders_
 > -POST: api/v1/orders/create-order
-
 > _Update Order_
 >
 > - PUT: api/v1/orders/:id
@@ -50,8 +48,7 @@ This is a mechanical keyboard e-commerce website server. In this website you can
 
 _Create Product_
 
-<pre>
-```json
+```
 {
     "image": "https://example.com/images/corsair-k95.jpg",
     "title": "Corsair K95 RGB Platinum",
@@ -61,12 +58,10 @@ _Create Product_
     "description": "The Corsair K95 RGB Platinum is a top-tier mechanical keyboard featuring customizable RGB lighting and durable key switches."
 }
 ```
-</pre>
 
 _Create Order_
 
-<pre>
-```json
+```
  {
     "name": "John Doe",
     "phone": "1234567890",
@@ -88,12 +83,10 @@ _Create Order_
     ]
   }
 ```
-</pre>
 
 _Create Review_
 
-<pre>
-```json
+```
 {
   "name": "John Doe",
   "email": "johndoe@example2.com",
@@ -104,7 +97,6 @@ _Create Review_
 }
 
 ```
-</pre>
 
 ---
 
