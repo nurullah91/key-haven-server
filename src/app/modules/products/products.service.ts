@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { TProducts } from "./products.interface";
 import Product from "./products.model";
 
@@ -6,8 +7,23 @@ const createProductIntoDB = async (payload: TProducts) => {
   return result;
 };
 
-const getAllProductsFromDB = async () => {
-  const result = await Product.find();
+const getAllProductsFromDB = async (
+  search: string | undefined,
+  limit: string | undefined,
+  page: string | undefined
+) => {
+  let query = {};
+  if (search) {
+    query = { $text: { $search: search } };
+  }
+
+  // set pagination options
+  const options: any = {};
+  if (limit && page) {
+    options.limit = Number(limit);
+    options.skip = (Number(page) - 1) * Number(limit);
+  }
+  const result = await Product.find(query, null, options);
   return result;
 };
 

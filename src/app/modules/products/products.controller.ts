@@ -15,7 +15,12 @@ const createProduct = handleAsync(async (req, res) => {
 });
 
 const getAllProducts = handleAsync(async (req, res) => {
-  const result = await ProductServices.getAllProductsFromDB();
+  const { search, limit, page } = req.query;
+  const result = await ProductServices.getAllProductsFromDB(
+    search as string | undefined,
+    limit as string | undefined,
+    page as string | undefined
+  );
 
   responseSender(res, {
     statusCode: httpStatus.OK,

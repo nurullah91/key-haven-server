@@ -16,6 +16,9 @@ const productSchema = new Schema(
   }
 );
 
+// Create compound text index for better search performance
+productSchema.index({ title: "text", brand: "text", description: "text" });
+
 productSchema.pre("find", function (next) {
   this.find({ isDeleted: { $ne: true } });
 

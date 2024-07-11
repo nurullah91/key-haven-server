@@ -10,6 +10,7 @@ This is a mechanical keyboard e-commerce website server. In this website you can
 > - PUT:api/v1/products/:id
 > - DELETE:api/v1/products/:id
 > - GET: api/v1/products
+> - GET: api/v1/products?page=2&limit=10&search=KeyBrand
 > - GET: api/v1/products/:id
 
 > ### Orders
@@ -18,6 +19,7 @@ This is a mechanical keyboard e-commerce website server. In this website you can
 > - PUT: api/v1/orders/:id
 > - DELETE: api/v1/orders/:id
 > - GET: api/v1/orders
+> - GET: api/v1/orders?email=sample@gmail.com
 > - GET: api/v1/orders/:id
 
 > ### Reviews
