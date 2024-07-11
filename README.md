@@ -6,40 +6,25 @@ This is a mechanical keyboard e-commerce website server. In this website you can
 >
 > ### Products
 >
-> _Create product_
-> -POST: api/v1/products/create-product
-> _Update Product_
->
+> - POST: api/v1/products/create-product
 > - PUT:api/v1/products/:id
->   _Delete Product_
 > - DELETE:api/v1/products/:id
->   _Visit Products_
 > - GET: api/v1/products
->   -GET: api/v1/products/:id
+> - GET: api/v1/products/:id
 
 > ### Orders
 >
-> _Create Orders_
-> -POST: api/v1/orders/create-order
-> _Update Order_
->
+> - POST: api/v1/orders/create-order
 > - PUT: api/v1/orders/:id
->   _Delete Order_
 > - DELETE: api/v1/orders/:id
->   _Visit Orders_
 > - GET: api/v1/orders
->   -GET: api/v1/orders/:id
+> - GET: api/v1/orders/:id
 
 > ### Reviews
 >
-> _Create Reviews_
-> -POST: api/v1/reviews/create-review
-> _Delete Review_
->
+> - POST: api/v1/reviews/create-review
 > - DELETE: api/v1/reviews/:id
->   _Update Review_
 > - PUT: api/v1/reviews/:id
->   _Visit Review_
 > - GET: api/v1/reviews
 
 ---
