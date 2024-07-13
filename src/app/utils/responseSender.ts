@@ -6,6 +6,7 @@ type TResponse<T> = {
   message?: string;
   token?: string;
   data: T;
+  totalProducts?: number;
 };
 
 const responseSender = <T>(res: Response, data: TResponse<T>) => {
@@ -15,6 +16,7 @@ const responseSender = <T>(res: Response, data: TResponse<T>) => {
     token: data.token,
     message: data.message,
     data: data.data,
+    totalProducts: data.totalProducts,
   });
 };
 

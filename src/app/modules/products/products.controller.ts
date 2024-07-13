@@ -16,7 +16,7 @@ const createProduct = handleAsync(async (req, res) => {
 
 const getAllProducts = handleAsync(async (req, res) => {
   const { search, limit, page } = req.query;
-  const result = await ProductServices.getAllProductsFromDB(
+  const { products, total } = await ProductServices.getAllProductsFromDB(
     search as string | undefined,
     limit as string | undefined,
     page as string | undefined
@@ -26,7 +26,8 @@ const getAllProducts = handleAsync(async (req, res) => {
     statusCode: httpStatus.OK,
     success: true,
     message: "All Product are retrieved Successfully",
-    data: result,
+    data: products,
+    totalProducts: total,
   });
 });
 

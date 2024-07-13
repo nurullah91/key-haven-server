@@ -23,8 +23,11 @@ const getAllProductsFromDB = async (
     options.limit = Number(limit);
     options.skip = (Number(page) - 1) * Number(limit);
   }
-  const result = await Product.find(query, null, options);
-  return result;
+  const [products, total] = await Promise.all([
+    Product.find(query, null, options),
+    Product.countDocuments(query),
+  ]);
+  return { products, total };
 };
 
 const getSingleProductFromDB = async (id: string) => {
