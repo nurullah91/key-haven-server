@@ -3,6 +3,7 @@ export type TProducts = {
   title: string;
   brand: string;
   availableQuantity: number;
+  ratings: number;
   price: number;
   description: string;
   isDeleted?: boolean;

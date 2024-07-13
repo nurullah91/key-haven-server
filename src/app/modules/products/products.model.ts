@@ -9,6 +9,7 @@ const productSchema = new Schema(
     description: { type: String, required: true },
     availableQuantity: { type: Number, required: true },
     price: { type: Number, required: true },
+    ratings: { type: Number, required: true },
     isDeleted: { type: Boolean, default: false },
   },
   {

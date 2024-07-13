@@ -15,6 +15,9 @@ const createProductValidationSchema = z.object({
   price: z
     .number()
     .nonnegative({ message: "Product price must be a non-negative integer" }),
+  ratings: z
+    .number()
+    .nonnegative({ message: "Product ratings must be a non-negative integer" }),
 });
 
 const updateProductValidationSchema = z.object({
